@@ -43,7 +43,7 @@ export async function getServerSideProps(context) {
   const isConnected = await client.isConnected();
   const db = client.db("store");
   const collection = db.collection("products");
-  const products = await collection.find({}).toArray();
+  const products = await collection.find({category: 'Hoodie'}).toArray();
 
   return {
     props: {
